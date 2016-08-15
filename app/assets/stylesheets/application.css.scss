@@ -11,6 +11,13 @@
  *= require_self
  *= require_tree .
  */
+
+body {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
 #banner {
   background: #9c9;
   padding: 10px;
@@ -42,6 +49,25 @@
     width: 13em;
     background: #141;
 
+    form, div {
+      display: inline;
+    }
+
+    input {
+      font-size: small;
+    }
+
+    #cart {
+      font-size: smaller;
+      color: white;
+
+      table {
+        border-top: 1px dotted #595;
+        border-bottom: 1px dotted #595;
+        margin-bottom: 10px;
+      }
+    }    
+
     ul {
       padding: 0;
 
@@ -62,6 +88,8 @@
     background: white;
   }
 }
+
+
 
 
 

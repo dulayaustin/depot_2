@@ -3,4 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Depot2::Application.load_tasks
+Core::Application.load_tasks

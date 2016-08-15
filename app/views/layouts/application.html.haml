@@ -1,0 +1,29 @@
+!!!
+%html
+  %head    
+    %title Depot2
+    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
+    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = csrf_meta_tags
+
+  %body{:class => "#{controller.controller_name}"}
+    #banner
+      = image_tag("logo.png")
+      = @page_title || "Pragmatic Bookshelf"
+    #columns
+      #side
+        #cart
+          - if @cart
+            = hidden_div_if(@cart.line_items.empty?, id: 'cart') do
+              = render "carts/cart", cart: @cart
+        %ul
+          %li= link_to 'Home', store_path
+          %li
+            %a{:href => "http://www..../faq"} Question
+          %li
+            %a{:href => "http://www..../news"} News
+          %li
+            %a{:href => "http://www..../contact"} Contact
+      #main
+        = yield
+
